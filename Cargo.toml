@@ -1,0 +1,30 @@
+[package]
+name = "marketplace-contract"
+version = "0.0.1"
+description = "Marketplace"
+authors = ["Rusty 0ne <4fun.and.job.offers@gmail.com>"]
+license = "Proprietary"
+edition = "2018"
+
+[features]
+no-entrypoint = []
+
+[dependencies]
+solana-program = "=1.16.13"
+borsh = "0.10.3"
+borsh-derive = "0.10.3"
+bytemuck = {version = "1.13.1", features = ["derive"]}
+serde = { version = "1.0", features = ["derive"] }
+serde_json = {version = "1.0"}
+spl-associated-token-account = {version = "1.0.3", features = [ "no-entrypoint" ]}
+spl-token = { version = "3.2.0", features = [ "no-entrypoint" ] }
+
+[dev-dependencies]
+assert_matches = "1.4.0"
+solana-program-test = "=1.16.13"
+solana-sdk = "=1.16.13"
+solana-validator = "=1.16.13"
+
+[lib]
+name = "marketplace"
+crate-type = ["cdylib", "lib"]
